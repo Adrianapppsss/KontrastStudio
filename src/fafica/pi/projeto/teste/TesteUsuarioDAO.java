@@ -8,22 +8,22 @@ import fafica.pi.projeto.jdbc.ClienteDAO;
 public class TesteUsuarioDAO {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	     // testeCadastrar();
+		
+	      testeCadastrar();
 		//testeAlterar();
-		testeDeletar();
+		//testeDeletar();
 		
 		//testarListarTodos();
+	      
 		
 	}
 	//Testar metodo cadastrar
 	private static void testeCadastrar() {
 		Cliente cliente= new Cliente();
 		
-		cliente.setNome("Ivan");
-		cliente.setLogin("ii987");
-		cliente.setSenha("1987");
+		cliente.setNome("Moura Filho");
+		cliente.setLogin("098uy");
+		cliente.setSenha("8uyt");
 		
 		ClienteDAO usu = new ClienteDAO();
 		
