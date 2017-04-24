@@ -32,11 +32,12 @@ String sql = "insert into profissional (nome,especialidade) VALUES(?, ?)";
 	}
 		public void alterar(Profissional profissional){
 			
-			String sql = "update usuario_adm set nome=?, nomeSalao=?, endereco=?, telefone=?, login=?, senha=? where id_UsuarioAdm =?";
+			String sql = "update profissional set nome=?, especialidade=? where id_profissional=?";
 					try {
 						PreparedStatement preparador = con.prepareStatement(sql);
 						preparador.setString(1,profissional.getNome());
 						preparador.setString(2,profissional.getEspecialidade());
+						preparador.setInt(3,profissional.getId_profissional());
 						
 						preparador.execute();
 						preparador.close();
@@ -51,7 +52,7 @@ String sql = "insert into profissional (nome,especialidade) VALUES(?, ?)";
 	}
 			public void excluir(Profissional profissional){
 			
-			String sql = "delete from usuario_adm where id_UsuarioAdm =?";
+			String sql = "delete from profissional where id_profissional =?";
 					
 					try {
 						PreparedStatement preparador = con.prepareStatement(sql);
@@ -70,7 +71,7 @@ String sql = "insert into profissional (nome,especialidade) VALUES(?, ?)";
 			}
 			public ArrayList<Profissional> listarTodos(){
 				
-				String sql = "select * from usuario_adm";
+				String sql = "select * from profissional";
 				ArrayList<Profissional> lista = new ArrayList<>();
 				try {
 					

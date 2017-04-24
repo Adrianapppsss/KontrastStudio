@@ -35,12 +35,13 @@ private Connection con = Conexao.getConnection();
 	}
 	public void alterar(Produto produto){
 		
-		String sql = "update produto set nome=? where id_produto=?";
+		String sql = "update produto set nome=?, preco=? where id_produto=?";
 		try {
 			PreparedStatement preparador = con.prepareStatement(sql);
 			
 		     preparador.setString(1, produto.getNome());
 		     preparador.setDouble(2, produto.getPreco());
+		     preparador.setInt(3,produto.getId_produto());
 			
 			
 			
@@ -94,13 +95,15 @@ private Connection con = Conexao.getConnection();
 			
 			while(resultado.next()){
 				
-				Produto cliente = new Produto();
+				Produto produto = new Produto();
 				
 					 
-				cliente.setId_produto(resultado.getInt("id_produto"));
-				cliente.setNome(resultado.getString("nome"));
+				produto.setId_produto(resultado.getInt("id_produto"));
+				produto.setNome(resultado.getString("nome"));
+				produto.setPreco(resultado.getDouble("preco"));
 				
-				lista.add(cliente);
+				
+				lista.add(produto);
 			}
 			preparador.close();
 			System.out.println("RETORNANDO LISTA COM SUCESSO!");

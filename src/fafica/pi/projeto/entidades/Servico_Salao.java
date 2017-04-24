@@ -2,7 +2,7 @@ package fafica.pi.projeto.entidades;
 
 public class Servico_Salao {
 	
-	private Integer id_salao;
+	private Integer id_servico;
 	private String cabelos;
 	private String depilacaoFeminina;
 	private String depilacaoMasculina;
@@ -11,11 +11,11 @@ public class Servico_Salao {
 	private double valor_servico;
 	
 	
-	public Integer getId_salao() {
-		return id_salao;
+	public Integer getId_Servico() {
+		return id_servico;
 	}
-	public void setId_salao(Integer id_salao) {
-		this.id_salao = id_salao;
+	public void setId_Servico(Integer id_servico) {
+		this.id_servico = id_servico;
 	}
 	public String getCabelos() {
 		return cabelos;

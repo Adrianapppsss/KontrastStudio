@@ -10,20 +10,20 @@ public class testaEndereco {
 
 	public static void main(String[] args) {
 	
-		  // testeCadastrar();
+		  //testeCadastrar();
 				//testeAlterar();
 				//testeDeletar();
 				
-				testarListarTodos();
+				//testarListarTodos();
 				
 			}
 			//Testar metodo cadastrar
 			private static void testeCadastrar() {
 				Endereco endereco= new Endereco();
 								
-				endereco.setBairro("Coqueiral");;
-				endereco.setRua("Escada");
-				endereco.setNum(97);
+				endereco.setBairro("Independente");;
+				endereco.setRua("Rua Maragogi");
+				endereco.setNum(7);
 				endereco.setCidade("Toritama");
 				endereco.setCEP("55125-000");
 				

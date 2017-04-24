@@ -37,7 +37,7 @@ String sql = "insert into usuario_adm (nome,nomesalao, endereco, telefone, login
 	}
 		public void alterar(Usuario_ADM usuario_adm){
 			
-			String sql = "update usuario_adm set nome=?, nomeSalao=?, endereco=?, telefone=?, login=?, senha=? where id_UsuarioAdm =?";
+			String sql = "update usuario_adm set nome=?, nomeSalao=?, endereco=?, telefone=?, login=?, senha=? where id_usuarioadm=?";
 					try {
 						PreparedStatement preparador = con.prepareStatement(sql);
 						preparador.setString(1,usuario_adm.getNome());
@@ -46,6 +46,7 @@ String sql = "insert into usuario_adm (nome,nomesalao, endereco, telefone, login
 						preparador.setString(4,usuario_adm.getTelefone());
 						preparador.setString(5,usuario_adm.getLogin());
 						preparador.setString(6,usuario_adm.getSenha());
+						preparador.setInt(7,usuario_adm.getId_usuarioAdm());
 						
 						preparador.execute();
 						preparador.close();
@@ -60,12 +61,12 @@ String sql = "insert into usuario_adm (nome,nomesalao, endereco, telefone, login
 	}
 			public void excluir(Usuario_ADM usuario_adm){
 			
-			String sql = "delete from usuario_adm where id_UsuarioAdm =?";
+			String sql = "delete from usuario_adm where id_usuarioadm =?";
 					
 					try {
 						PreparedStatement preparador = con.prepareStatement(sql);
 						
-						preparador.setInt(1, usuario_adm.getId_UsuarioAdm());
+						preparador.setInt(1, usuario_adm.getId_usuarioAdm());
 						
 									
 						preparador.execute();
@@ -93,7 +94,7 @@ String sql = "insert into usuario_adm (nome,nomesalao, endereco, telefone, login
 						Usuario_ADM usuario_ADM = new Usuario_ADM();
 						
 						 
-						usuario_ADM.setId_UsuarioAdm(resultado.getInt("id_UsuarioAdm"));//Pega o valor da coluna
+						usuario_ADM.setId_UsuarioAdm(resultado.getInt("id_usuarioAdm"));//Pega o valor da coluna
 						usuario_ADM.setNome(resultado.getString("nome"));
 						usuario_ADM.setNomeSalao(resultado.getString("nomeSalao"));
 						usuario_ADM.setEndereco(resultado.getString("endereco"));

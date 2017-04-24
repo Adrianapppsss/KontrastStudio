@@ -9,7 +9,10 @@ public class TesteAgendarServicoDao {
 		
 		AgendarServico agenda = new AgendarServico();
 		
-		agenda.setData("23/09/2016");
+		agenda.setId_agendamento(1);
+		agenda.setId_cliente(18);
+		agenda.setId_profissional(4);
+		agenda.setData(null);
 		
 		
 		AgendarServicoDao agendaDao = new AgendarServicoDao();

@@ -6,8 +6,10 @@ public class AgendarServico {
 	
 	private Integer id_agendamento;
 	private Integer id_profissional;
-	private String data;
+	private Date data;
 	private Integer id_cliente;
+	
+	
 	public Integer getId_agendamento() {
 		return id_agendamento;
 	}
@@ -21,10 +23,10 @@ public class AgendarServico {
 		this.id_profissional = id_profissional;
 	}
 	
-	public String getData() {
+	public Date getData() {
 		return data;
 	}
-	public void setData(String data) {
+	public void setData(Date data) {
 		this.data = data;
 	}
 	public Integer getId_cliente() {

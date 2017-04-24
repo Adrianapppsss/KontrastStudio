@@ -42,7 +42,7 @@ public class ServicoSalaoDao {
 		}
 		public void alterar(Servico_Salao servico_Salao){
 			
-			String sql = "update servico_salao set cabelos=?, depilacaomasculina=?,depilacaofeminina=?,manicure_pedicure=?,servico_especial=? where id_salao=?";
+			String sql = "update servico_salao set cabelos=?, depilacaomasculina=?,depilacaofeminina=?,manicure_pedicure=?,servico_especial=?, valor_servico=? where id_servico=?";
 			try {
 				PreparedStatement preparador = con.prepareStatement(sql);
 				
@@ -52,7 +52,7 @@ public class ServicoSalaoDao {
 				preparador.setString(4, servico_Salao.getManicure_pedicure());
 				preparador.setString(5, servico_Salao.getServico_especial());
 				preparador.setDouble(6,servico_Salao.getValor_servico());
-				preparador.setInt(7,servico_Salao.getId_salao());
+				preparador.setInt(7,servico_Salao.getId_Servico());
 				
 				
 				preparador.execute();
@@ -72,7 +72,7 @@ public class ServicoSalaoDao {
 			try {
 				PreparedStatement preparador = con.prepareStatement(sql);
 				
-				preparador.setInt(1,servico_Salao.getId_salao());
+				preparador.setInt(1,servico_Salao.getId_Servico());
 				
 				
 				//Executa o comando no banco
@@ -110,7 +110,7 @@ public class ServicoSalaoDao {
 					/*Capturando os valores dos resultados
 					 * e os atribuindo para cada objeto*/
 					 
-					servico.setId_salao(resultado.getInt("id_salao"));//Pega o valor da coluna
+					servico.setId_Servico(resultado.getInt("id_salao"));//Pega o valor da coluna
 					servico.setCabelos(resultado.getString("cabelos"));
 					servico.setDepilacaoMasculina(resultado.getString("depilacaoMasculina"));
 					servico.setDepilacaoFeminina(resultado.getString("depilacaoFeminina"));

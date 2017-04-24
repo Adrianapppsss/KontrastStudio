@@ -15,12 +15,12 @@ public class AgendarServicoDao {
 	
 	public void cadastrar(AgendarServico agendarServico){
 		
-	String sql="INSERT INTO agendarServico (data) values(?)";
+	String sql="insert into agendarServico (data) values(?)";
 	
 	try {
 		PreparedStatement preparador= con.prepareStatement(sql);
 		
-		preparador.setString(1,agendarServico.getData());
+		preparador.setDate(1,agendarServico.getData());
 		
 		preparador.execute();
 		preparador.close();

@@ -12,10 +12,9 @@ public class TesteServicoSalao {
 	public static void main(String[] args) {
 		
 
-	     testeCadastrar();
+	    //testeCadastrar();
 		//testeAlterar();
-		//testeDeletar();
-		
+		//testeExcluir();		
 		//testarListarTodos();
 		
 	}
@@ -23,7 +22,7 @@ public class TesteServicoSalao {
 	private static void testeCadastrar() {
 		Servico_Salao servico = new Servico_Salao();
 		
-		servico.setCabelos("Mexas");
+		servico.setCabelos("Pintar cabelos logos");
 		servico.setDepilacaoFeminina("Sobrancelha");
 		servico.setDepilacaoMasculina("Depilação Peito");
 		servico.setManicure_pedicure("Unhas em gel");
@@ -38,20 +37,21 @@ public class TesteServicoSalao {
 	private static void testeAlterar(){
 		
 		Servico_Salao servico= new Servico_Salao();
-		servico.setId_salao(2);
+		servico.setId_Servico(2);
 		servico.setCabelos("Corta Cabelos ");
 		servico.setDepilacaoFeminina("Perna inteira");
 		servico.setDepilacaoMasculina("Axila");
-		servico.setManicure_pedicure("Unhas desenhadas");
-		servico.setServico_especial("Festa ");
+		servico.setManicure_pedicure("Unhas ");
+		servico.setServico_especial("Casamento");
+		servico.setValor_servico(100.00);
 		
 		ServicoSalaoDao usu = new ServicoSalaoDao();
 		
 		usu.alterar(servico);
 	}
-	private static void testeDeletar(){
+	private static void testeExcluir(){
 		Servico_Salao servico = new Servico_Salao();
-		servico.setId_salao(4);
+		servico.setId_Servico(7);
 		
 		ServicoSalaoDao usu = new ServicoSalaoDao();
 		usu.excluir(servico);
@@ -62,7 +62,7 @@ public class TesteServicoSalao {
 		 ArrayList<Servico_Salao> listaResultado = usu.listarTodos();
 		 //Varrendo e imprimindo a lista
 		 for(Servico_Salao c: listaResultado){
-			 System.out.println("Serviços para cabelo: "+c.getCabelos()+"\nDepilação Masculina: "+c.getDepilacaoMasculina()+"\nDepilação Feminina: "+c.getDepilacaoFeminina()+"\nManicure & Pedicure: "+c.getManicure_pedicure()+"\nID: "+c.getId_salao());
+			 System.out.println("Serviços para cabelo: "+c.getCabelos()+"\nDepilação Masculina: "+c.getDepilacaoMasculina()+"\nDepilação Feminina: "+c.getDepilacaoFeminina()+"\nManicure & Pedicure: "+c.getManicure_pedicure()+"\nID: "+c.getId_Servico());
 		 }
 	 
 

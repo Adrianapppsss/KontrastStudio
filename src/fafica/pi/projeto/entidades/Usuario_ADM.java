@@ -1,7 +1,7 @@
 package fafica.pi.projeto.entidades;
 
 public class Usuario_ADM {
-	private Integer id_UsuarioAdm;
+	private Integer id_usuarioAdm;
 	private String nome;
 	private String nomesalao;
 	private String endereco;
@@ -9,11 +9,11 @@ public class Usuario_ADM {
 	private String login;
 	private String senha;
 	
-	public Integer getId_UsuarioAdm() {
-		return id_UsuarioAdm;
+	public Integer getId_usuarioAdm() {
+		return id_usuarioAdm;
 	}
-	public void setId_UsuarioAdm(Integer id_UsuarioAdm) {
-		this.id_UsuarioAdm = id_UsuarioAdm;
+	public void setId_UsuarioAdm(Integer id_usuarioAdm) {
+		this.id_usuarioAdm = id_usuarioAdm;
 	}
 	public String getNome() {
 		return nome;
